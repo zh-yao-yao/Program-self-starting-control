@@ -1,0 +1,25 @@
+<service>
+  <!-- 服务的唯一ID（建议与文件名一致） -->
+  <id>haif-controller</id>
+  <name>haif-controller</name>
+  <description>Controls startup order of Haif services (nacos, mysql, redis, nginx before base, wms)</description>
+
+  <!-- 启动脚本 -->
+  <executable>cmd</executable>
+  <arguments>/c "D:\haifengSoft_v1.0\controller\haif-controller.bat"</arguments>
+
+  <!-- 工作目录（可选） -->
+  <workingdirectory>D:\haifengSoft_v1.0\controller</workingdirectory>
+
+  <!-- 日志配置 -->
+  <logpath>D:\haifengSoft_v1.0\controller\logs</logpath>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>5</keepFiles>
+  </log>
+
+  <!-- 服务运行账户（可选） -->
+  <!-- <serviceaccount>.\LocalSystem</serviceaccount> -->
+
+  <!-- 当脚本退出时，WinSW 会认为服务结束。若要循环运行可设置 wrapper 方式 -->
+</service>
